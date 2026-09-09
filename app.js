@@ -1,3 +1,36 @@
+// ---------- classificazione per l'ordinamento predefinito ----------
+function classifyGaraGroup(r){
+  const g = (r.gara || '').toUpperCase();
+  if(r.tipo === 'Corse'){
+    if(/^4\s*X\s*\d/.test(g) || g.includes('STAFFETTA')) return 3; // staffette -> sempre in fondo
+    return 0; // corse
+  }
+  if(/LUNGO|ALTO|TRIPLO|ASTA/.test(g)) return 1; // salti
+  if(/PESO|DISCO|GIAVELLOTTO|MARTELLO|CLUB/.test(g)) return 2; // lanci
+  return 2.5; // altro (es. pentathlon) tra lanci e staffette
+}
+function catSortKey(cat){
+  const m = (cat || '').match(/([A-Za-z]+)\s*[-/]?\s*(\d+)/);
+  return {
+    letter: m ? m[1].toUpperCase() : (cat || '').toUpperCase(),
+    num: m ? parseInt(m[2], 10) : 0,
+  };
+}
+RECORDS.forEach(r => {
+  r.sexOrder = r.sex === 'F' ? 0 : 1;
+  r.garaGroup = classifyGaraGroup(r);
+  const k = catSortKey(r.cat);
+  r.catLetter = k.letter;
+  r.catNum = k.num;
+});
+function defaultCompare(a, b){
+  if(a.sexOrder !== b.sexOrder) return a.sexOrder - b.sexOrder;
+  if(a.garaGroup !== b.garaGroup) return a.garaGroup - b.garaGroup;
+  if(a.catLetter !== b.catLetter) return a.catLetter < b.catLetter ? -1 : 1;
+  if(a.catNum !== b.catNum) return a.catNum - b.catNum;
+  return a.idx - b.idx;
+}
+
 // ---------- configurazione tab ----------
 const TABS = [
   { key: 'outdoor', label: 'Outdoor', ambiente: 'outdoor', sheets: ['CORSE', 'CONCORSI'] },
@@ -43,9 +76,11 @@ function filteredRecords(){
 function sortRecords(list){
   const { sortKey, sortDir } = state;
   const dir = sortDir === 'asc' ? 1 : -1;
+  if(sortKey === 'idx'){
+    return list.slice().sort((a,b) => defaultCompare(a,b) * dir);
+  }
   return list.slice().sort((a,b) => {
     let av = a[sortKey], bv = b[sortKey];
-    if(sortKey === 'idx'){ return (av-bv)*dir; }
     av = (av||'').toString().toLowerCase();
     bv = (bv||'').toString().toLowerCase();
     if(av < bv) return -1*dir;
