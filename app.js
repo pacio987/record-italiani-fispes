@@ -51,9 +51,16 @@ let state = {
 function parseWind(raw){
   if(!raw) return { display:'', mp:false };
   const hasMP = /mp/i.test(raw);
-  if(!hasMP) return { display: raw, mp:false };
-  let cleaned = raw.replace(/mp/i,'').replace(/[()]/g,'').trim();
-  return { display: cleaned, mp:true };
+  const rest = hasMP ? raw.replace(/mp/i,'').replace(/[()]/g,'').trim() : raw.trim();
+  const isNumeric = /^[+-]?\d+([.,]\d+)?$/.test(rest);
+  let display;
+  if(isNumeric){
+    const num = parseFloat(rest.replace(',', '.'));
+    display = (num > 0 ? '+' : '') + num.toFixed(1);
+  } else {
+    display = rest; // es. 'nd' o altro testo non numerico
+  }
+  return { display, mp: hasMP };
 }
 
 function currentTabConfig(){
