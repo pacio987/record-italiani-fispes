@@ -1,4 +1,12 @@
 // ---------- classificazione per l'ordinamento predefinito ----------
+const GARA_ORDER = ['100','200','400','800','1500','5000','10000','10KM','1/2MARATONA','MARATONA','4X100','4X400'];
+function normalizeGara(g){
+  return (g || '').toUpperCase().replace(/\s+/g, '').replace(/INDOOR$/, '');
+}
+function garaRank(g){
+  const idx = GARA_ORDER.indexOf(normalizeGara(g));
+  return idx === -1 ? 1000 : idx;
+}
 function catSortKey(cat){
   const m = (cat || '').match(/([A-Za-z]+)\s*[-/]?\s*(\d+)/);
   return {
@@ -8,14 +16,18 @@ function catSortKey(cat){
 }
 RECORDS.forEach(r => {
   r.sexOrder = r.sex === 'F' ? 0 : 1;
+  r.garaRank = garaRank(r.gara);
   const k = catSortKey(r.cat);
   r.catLetter = k.letter;
   r.catNum = k.num;
 });
 function defaultCompare(a, b){
   if(a.sexOrder !== b.sexOrder) return a.sexOrder - b.sexOrder;
-  const ga = (a.gara || '').toLowerCase(), gb = (b.gara || '').toLowerCase();
-  if(ga !== gb) return ga < gb ? -1 : 1;
+  if(a.garaRank !== b.garaRank) return a.garaRank - b.garaRank;
+  if(a.garaRank === 1000){ // gara non elencata: ordine alfabetico tra loro
+    const ga = (a.gara||'').toLowerCase(), gb = (b.gara||'').toLowerCase();
+    if(ga !== gb) return ga < gb ? -1 : 1;
+  }
   if(a.catLetter !== b.catLetter) return a.catLetter < b.catLetter ? -1 : 1;
   if(a.catNum !== b.catNum) return a.catNum - b.catNum;
   return a.idx - b.idx;
