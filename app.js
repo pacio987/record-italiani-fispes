@@ -1,5 +1,5 @@
 // ---------- classificazione per l'ordinamento predefinito ----------
-const GARA_ORDER = ['100','200','400','800','1500','5000','10000','10KM','1/2MARATONA','MARATONA','4X100','4X400'];
+const GARA_ORDER = ['100','200','400','800','1500','5000','10000','10KM','1/2MARATONA','MARATONA','4X100','4X400','ALTO','LUNGO','TRIPLO','PESO','DISCO','GIAVELLOTTO','CLAVA'];
 function normalizeGara(g){
   return (g || '').toUpperCase().replace(/\s+/g, '').replace(/INDOOR$/, '');
 }
@@ -73,6 +73,7 @@ function filteredRecords(){
   return RECORDS.filter(r => {
     if(r.ambiente !== cfg.ambiente) return false;
     if(r.sezione === 'trasferito') return false;
+    if(r.gara.toUpperCase() === 'PENTATHLON') return false;
     if(state.sex !== 'ALL' && r.sex !== state.sex) return false;
     if(q){
       const hay = (r.atleta+' '+r.cat+' '+r.gara+' '+r.societa+' '+r.luogo).toLowerCase();
@@ -118,7 +119,7 @@ function renderTabs(){
   const wrap = document.getElementById('tabs');
   wrap.innerHTML = '';
   TABS.forEach(t => {
-    const count = RECORDS.filter(r => r.ambiente===t.ambiente && r.sezione==='attivo').length;
+    const count = RECORDS.filter(r => r.ambiente===t.ambiente && r.sezione==='attivo' && r.gara.toUpperCase()!=='PENTATHLON').length;
     const btn = document.createElement('button');
     btn.className = 'tab' + (t.key===state.tab ? ' active' : '');
     btn.innerHTML = t.label + '<span class="tab-count">' + count + '</span>';
