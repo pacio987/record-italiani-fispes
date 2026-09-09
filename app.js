@@ -1,14 +1,4 @@
 // ---------- classificazione per l'ordinamento predefinito ----------
-function classifyGaraGroup(r){
-  const g = (r.gara || '').toUpperCase();
-  if(r.tipo === 'Corse'){
-    if(/^4\s*X\s*\d/.test(g) || g.includes('STAFFETTA')) return 3; // staffette -> sempre in fondo
-    return 0; // corse
-  }
-  if(/LUNGO|ALTO|TRIPLO|ASTA/.test(g)) return 1; // salti
-  if(/PESO|DISCO|GIAVELLOTTO|MARTELLO|CLUB/.test(g)) return 2; // lanci
-  return 2.5; // altro (es. pentathlon) tra lanci e staffette
-}
 function catSortKey(cat){
   const m = (cat || '').match(/([A-Za-z]+)\s*[-/]?\s*(\d+)/);
   return {
@@ -18,14 +8,14 @@ function catSortKey(cat){
 }
 RECORDS.forEach(r => {
   r.sexOrder = r.sex === 'F' ? 0 : 1;
-  r.garaGroup = classifyGaraGroup(r);
   const k = catSortKey(r.cat);
   r.catLetter = k.letter;
   r.catNum = k.num;
 });
 function defaultCompare(a, b){
   if(a.sexOrder !== b.sexOrder) return a.sexOrder - b.sexOrder;
-  if(a.garaGroup !== b.garaGroup) return a.garaGroup - b.garaGroup;
+  const ga = (a.gara || '').toLowerCase(), gb = (b.gara || '').toLowerCase();
+  if(ga !== gb) return ga < gb ? -1 : 1;
   if(a.catLetter !== b.catLetter) return a.catLetter < b.catLetter ? -1 : 1;
   if(a.catNum !== b.catNum) return a.catNum - b.catNum;
   return a.idx - b.idx;
@@ -73,11 +63,26 @@ function filteredRecords(){
   });
 }
 
+function dateSortValue(str){
+  if(!str) return -1;
+  const m = str.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+  if(!m) return -1; // date non standard (es. testo libero) vanno in fondo
+  const [, gg, mm, yyyy] = m;
+  return parseInt(yyyy,10)*10000 + parseInt(mm,10)*100 + parseInt(gg,10);
+}
+
 function sortRecords(list){
   const { sortKey, sortDir } = state;
   const dir = sortDir === 'asc' ? 1 : -1;
   if(sortKey === 'idx'){
     return list.slice().sort((a,b) => defaultCompare(a,b) * dir);
+  }
+  if(sortKey === 'data'){
+    return list.slice().sort((a,b) => {
+      const av = dateSortValue(a.data), bv = dateSortValue(b.data);
+      if(av !== bv) return (av-bv)*dir;
+      return a.idx-b.idx;
+    });
   }
   return list.slice().sort((a,b) => {
     let av = a[sortKey], bv = b[sortKey];
