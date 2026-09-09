@@ -1,10 +1,12 @@
 // ---------- classificazione per l'ordinamento predefinito ----------
-const GARA_ORDER = ['100','200','400','800','1500','5000','10000','10KM','1/2MARATONA','MARATONA','4X100','4X400','ALTO','LUNGO','TRIPLO','PESO','DISCO','GIAVELLOTTO','CLAVA'];
+const GARA_ORDER_OUTDOOR = ['100','200','400','800','1500','5000','10000','10KM','1/2MARATONA','MARATONA','4X100','4X400','LUNGO','ALTO','TRIPLO','PESO','DISCO','GIAVELLOTTO','CLAVA'];
+const GARA_ORDER_INDOOR = ['60','200','400','800','1500','LUNGO','ALTO','PESO'];
 function normalizeGara(g){
   return (g || '').toUpperCase().replace(/\s+/g, '').replace(/INDOOR$/, '');
 }
-function garaRank(g){
-  const idx = GARA_ORDER.indexOf(normalizeGara(g));
+function garaRank(g, ambiente){
+  const order = ambiente === 'indoor' ? GARA_ORDER_INDOOR : GARA_ORDER_OUTDOOR;
+  const idx = order.indexOf(normalizeGara(g));
   return idx === -1 ? 1000 : idx;
 }
 function catSortKey(cat){
@@ -16,7 +18,7 @@ function catSortKey(cat){
 }
 RECORDS.forEach(r => {
   r.sexOrder = r.sex === 'F' ? 0 : 1;
-  r.garaRank = garaRank(r.gara);
+  r.garaRank = garaRank(r.gara, r.ambiente);
   const k = catSortKey(r.cat);
   r.catLetter = k.letter;
   r.catNum = k.num;
