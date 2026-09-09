@@ -1,16 +1,13 @@
 // ---------- configurazione tab ----------
 const TABS = [
-  { key: 'corse-outdoor',    label: 'Corse',     tipo: 'Corse',     ambiente: 'outdoor', sheet: 'CORSE' },
-  { key: 'concorsi-outdoor', label: 'Concorsi',  tipo: 'Concorsi',  ambiente: 'outdoor', sheet: 'CONCORSI' },
-  { key: 'corse-indoor',     label: 'Corse Indoor',    tipo: 'Corse',    ambiente: 'indoor', sheet: 'CORSE_Indoor' },
-  { key: 'concorsi-indoor',  label: 'Concorsi Indoor', tipo: 'Concorsi', ambiente: 'indoor', sheet: 'CONCORSI_Indoor' },
+  { key: 'outdoor', label: 'Outdoor', ambiente: 'outdoor', sheets: ['CORSE', 'CONCORSI'] },
+  { key: 'indoor',  label: 'Indoor',  ambiente: 'indoor',  sheets: ['CORSE_Indoor', 'CONCORSI_Indoor'] },
 ];
 
 let state = {
   tab: TABS[0].key,
   sex: 'ALL',
   search: '',
-  showTransferred: false,
   sortKey: 'idx',
   sortDir: 'asc',
 };
@@ -32,8 +29,8 @@ function filteredRecords(){
   const cfg = currentTabConfig();
   const q = state.search.trim().toLowerCase();
   return RECORDS.filter(r => {
-    if(r.tipo !== cfg.tipo || r.ambiente !== cfg.ambiente) return false;
-    if(!state.showTransferred && r.sezione === 'trasferito') return false;
+    if(r.ambiente !== cfg.ambiente) return false;
+    if(r.sezione === 'trasferito') return false;
     if(state.sex !== 'ALL' && r.sex !== state.sex) return false;
     if(q){
       const hay = (r.atleta+' '+r.cat+' '+r.gara+' '+r.societa+' '+r.luogo).toLowerCase();
@@ -62,7 +59,7 @@ function renderTabs(){
   const wrap = document.getElementById('tabs');
   wrap.innerHTML = '';
   TABS.forEach(t => {
-    const count = RECORDS.filter(r => r.tipo===t.tipo && r.ambiente===t.ambiente && (state.showTransferred || r.sezione==='attivo')).length;
+    const count = RECORDS.filter(r => r.ambiente===t.ambiente && r.sezione==='attivo').length;
     const btn = document.createElement('button');
     btn.className = 'tab' + (t.key===state.tab ? ' active' : '');
     btn.innerHTML = t.label + '<span class="tab-count">' + count + '</span>';
@@ -73,8 +70,15 @@ function renderTabs(){
 
 function renderUpdated(){
   const cfg = currentTabConfig();
-  const d = UPDATED[cfg.sheet] || '—';
-  document.getElementById('updated-date').textContent = d;
+  const dates = cfg.sheets.map(s => UPDATED[s] || '—');
+  const uniq = [...new Set(dates)];
+  let label;
+  if(uniq.length === 1){
+    label = uniq[0];
+  } else {
+    label = cfg.sheets.map((s,i) => (s.includes('CONCORSI') ? 'Concorsi' : 'Corse') + ' ' + dates[i]).join(' · ');
+  }
+  document.getElementById('updated-date').textContent = label;
 }
 
 function renderHeaderArrows(){
@@ -106,11 +110,9 @@ function renderTable(){
   const rows = list.map(r => {
     const wind = parseWind(r.wind);
     const mpBadge = wind.mp ? '<span class="badge-mp">MP</span>' : '';
-    const cipBadge = r.sezione === 'trasferito' ? '<span class="badge-cip">CIP</span> ' : '';
-    const trClass = r.sezione === 'trasferito' ? ' class="transferred"' : '';
-    return `<tr${trClass}>
+    return `<tr>
       <td>${r.sex}</td>
-      <td>${cipBadge}${r.cat}</td>
+      <td>${r.cat}</td>
       <td>${r.gara}</td>
       <td class="atleta wrap">${r.atleta}</td>
       <td class="prest">${r.prest}${mpBadge}</td>
@@ -143,11 +145,6 @@ document.querySelectorAll('#sesso-filter button').forEach(btn => {
 document.getElementById('search').addEventListener('input', (e) => {
   state.search = e.target.value;
   renderTable();
-});
-
-document.getElementById('show-transferred').addEventListener('change', (e) => {
-  state.showTransferred = e.target.checked;
-  render();
 });
 
 document.querySelectorAll('#records-table thead th').forEach(th => {
