@@ -208,10 +208,10 @@ const RECORDS = [
   {tipo:"Corse", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"T11", gara:"10km", atleta:"BERSINI Emanuele", prest:"42'21\"", wind:"", data:"09/03/2025", luogo:"BRESCIA", societa:"CUS BRESCIA", idx:206},
   {tipo:"Corse", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"T12/13", gara:"10km", atleta:"PILI D'OTTAVIO Giovanni", prest:"40'21\"", wind:"", data:"09/03/2025", luogo:"BRESCIA", societa:"OLYMPIA ATHLETIC TEAM", idx:207},
   {tipo:"Corse", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"T37", gara:"10km", atleta:"vacante", prest:"", wind:"", data:"", luogo:"", societa:"", idx:208},
-  {tipo:"Corse", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"T38", gara:"10km", atleta:"VERZELLETTI Andrea", prest:"43'37\"", wind:"", data:"09/03/2025", luogo:"BRESCIA", societa:"ROSA RUNNING TEAM", idx:209},
+  {tipo:"Corse", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"T38", gara:"10km", atleta:"NUNZIATA Tobia", prest:"36'47\"", wind:"", data:"20/09/2026", luogo:"SOMMA VESUVIANA", societa:"ROSA RUNNING TEAM", idx:209},
   {tipo:"Corse", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"T44", gara:"10km", atleta:"CAPPELLETTI Matteo", prest:"43'40\"", wind:"", data:"09/03/2025", luogo:"BRESCIA", societa:"ANTHROPOS MC", idx:210},
   {tipo:"Corse", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"T45", gara:"10km", atleta:"ADAMO Renato", prest:"41'52\"", wind:"", data:"09/03/2025", luogo:"BRESCIA", societa:"POL. DIS. PARCO SPORT", idx:211},
-  {tipo:"Corse", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"T46", gara:"10km", atleta:"ROCCA Nicola", prest:"45'46\"", wind:"", data:"09/03/2025", luogo:"BRESCIA", societa:"OLYMPIA ATHLETIC TEAM", idx:212},
+  {tipo:"Corse", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"T46", gara:"10km", atleta:"RICCIARDI Michele", prest:"42'30\"", wind:"", data:"20/09/2026", luogo:"SOMMA VESUVIANA", societa:"GS PARALIMPICO DIFESA", idx:212},
   {tipo:"Corse", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"T11", gara:"1/2 MARATONA", atleta:"CIONNA Andrea", prest:"1:14'22''", wind:"", data:"23/02/2003", luogo:"ROMA", societa:"ATLETICA AMATORI OSIMO", idx:213},
   {tipo:"Corse", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"T12/13", gara:"1/2 MARATONA", atleta:"COCCHI Fabrizio", prest:"1:13'13''", wind:"", data:"23/02/2003", luogo:"ROMA", societa:"BEATA MARGHERITA CdC", idx:214},
   {tipo:"Corse", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"T37", gara:"1/2 MARATONA", atleta:"MINERBA Fabrizio", prest:"1:52'47\"", wind:"", data:"22/01/2012", luogo:"POLA", societa:"SASPO CAGLIARI", idx:215},
@@ -602,4 +602,4 @@ const RECORDS = [
   {tipo:"Concorsi", ambiente:"indoor", sezione:"attivo", sex:"M", cat:"F64", gara:"PESO Indoor", atleta:"LA BARBERA Roberto", prest:"11,94", wind:"", data:"05/04/2009", luogo:"ANCONA", societa:"SCANAVINO TEAM", idx:600},
 ];
 
-const UPDATED = {'CORSE':"15/09/2026",'CONCORSI':"19/09/2026",'CORSE_Indoor':"09/09/2026",'CONCORSI_Indoor':"09/09/2026"};
+const UPDATED = {'CORSE':"20/09/2026",'CONCORSI':"19/09/2026",'CORSE_Indoor':"09/09/2026",'CONCORSI_Indoor':"09/09/2026"};
