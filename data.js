@@ -388,7 +388,7 @@ const RECORDS = [
   {tipo:"Concorsi", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"F37", gara:"GIAVELLOTTO", atleta:"FIORE G.Carlo", prest:"31,90", wind:"", data:"23/05/1999", luogo:"RAGUSA", societa:"HANDY SPORT RAGUSA", idx:386},
   {tipo:"Concorsi", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"F38", gara:"GIAVELLOTTO", atleta:"ADDARIO Rocco", prest:"22,60", wind:"", data:"23/05/1999", luogo:"RAGUSA", societa:"A.S. GELA SPORT", idx:387},
   {tipo:"Concorsi", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"F41", gara:"GIAVELLOTTO", atleta:"CAPROTTI Simone", prest:"26,66", wind:"", data:"04/07/2026", luogo:"GROSSETO", societa:"FREEMOVING", idx:388},
-  {tipo:"Concorsi", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"F42", gara:"GIAVELLOTTO", atleta:"GOMIERO Denny", prest:"14,38", wind:"MP", data:"19/09/2026", luogo:"CASSOLA", societa:"VENETO SPECIAL SPORT SSD", idx:389},
+  {tipo:"Concorsi", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"F42", gara:"GIAVELLOTTO", atleta:"GOMIERO Denny", prest:"14,38", wind:"", data:"19/09/2026", luogo:"CASSOLA", societa:"VENETO SPECIAL SPORT SSD", idx:389},
   {tipo:"Concorsi", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"F44", gara:"GIAVELLOTTO", atleta:"MARRE' Federico", prest:"26,24", wind:"", data:"09/05/2026", luogo:"NOVARA", societa:"SS TRIONFO LIGURE", idx:390},
   {tipo:"Concorsi", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"F46", gara:"GIAVELLOTTO", atleta:"GOBBI Samuele", prest:"29,77", wind:"", data:"04/07/2026", luogo:"GROSSETO", societa:"UOEI TREVISO", idx:391},
   {tipo:"Concorsi", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"F52", gara:"GIAVELLOTTO", atleta:"GANESHAMOORTHY Rigivan", prest:"21,49", wind:"", data:"12/10/2024", luogo:"ROMA", societa:"ANTHROPOS MC", idx:392},
@@ -603,4 +603,4 @@ const RECORDS = [
   {tipo:"Concorsi", ambiente:"indoor", sezione:"attivo", sex:"M", cat:"F64", gara:"PESO Indoor", atleta:"LA BARBERA Roberto", prest:"11,94", wind:"", data:"05/04/2009", luogo:"ANCONA", societa:"SCANAVINO TEAM", idx:601},
 ];
 
-const UPDATED = {'CORSE':"21/09/2026",'CONCORSI':"19/09/2026",'CORSE_Indoor':"09/09/2026",'CONCORSI_Indoor':"09/09/2026"};
+const UPDATED = {'CORSE':"21/09/2026",'CONCORSI':"21/09/2026",'CORSE_Indoor':"09/09/2026",'CONCORSI_Indoor':"09/09/2026"};
