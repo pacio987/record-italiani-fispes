@@ -7,7 +7,7 @@ const RECORDS = [
   {tipo:"Corse", ambiente:"outdoor", sezione:"attivo", sex:"F", cat:"T35", gara:"100", atleta:"CORSO Oxana", prest:"14\"91", wind:"2", data:"10/04/2016", luogo:"GROSSETO", societa:"GS PARALIMPICO FIAMME GIALLE ", idx:5},
   {tipo:"Corse", ambiente:"outdoor", sezione:"attivo", sex:"F", cat:"T36", gara:"100", atleta:"LASIO Patrizia", prest:"21\"63", wind:"nd", data:"29/05/2004", luogo:"ROMA", societa:"SASPO CAGLIARI", idx:6},
   {tipo:"Corse", ambiente:"outdoor", sezione:"attivo", sex:"F", cat:"T37", gara:"100", atleta:"CORSO Oxana", prest:"15\"73", wind:"-0.3", data:"31/05/2012", luogo:"ROMA", societa:"ACLI III MILLENNIO", idx:7},
-  {tipo:"Corse", ambiente:"outdoor", sezione:"attivo", sex:"F", cat:"T38", gara:"100", atleta:"LONGO M. Rosaria", prest:"15''60", wind:"nd", data:"07/07/1996", luogo:"DOMODOSSOLA ", societa:"IRIDE CATANIA", idx:8},
+  {tipo:"Corse", ambiente:"outdoor", sezione:"attivo", sex:"F", cat:"T38", gara:"100", atleta:"DI DOMENICO Silvia", prest:"12\"65", wind:"0.5", data:"19/09/2026", luogo:"ROMA", societa:"ATL. PARALIMPICA TRE FONTANE", idx:8},
   {tipo:"Corse", ambiente:"outdoor", sezione:"attivo", sex:"F", cat:"T44", gara:"100", atleta:"GULLI' Giuliana", prest:"18\"82", wind:"0,1 (MP)", data:"12/09/2026", luogo:"GENOVA", societa:"GSH SEMPIONE '82", idx:9},
   {tipo:"Corse", ambiente:"outdoor", sezione:"attivo", sex:"F", cat:"T46/47", gara:"100", atleta:"FRISCIA Alessia", prest:"13''66", wind:"0.1", data:"03/06/2026", luogo:"ROMA", societa:"GSH SEMPIONE '82", idx:10},
   {tipo:"Corse", ambiente:"outdoor", sezione:"attivo", sex:"F", cat:"T51", gara:"100", atleta:"ALBANO Teresa", prest:"41\"20", wind:"nd", data:"29/05/2004", luogo:"ROMA", societa:"ANTHROPOS", idx:11},
