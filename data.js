@@ -345,7 +345,7 @@ const RECORDS = [
   {tipo:"Concorsi", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"F37", gara:"PESO", atleta:"RUSSO Nicky", prest:"11,98", wind:"", data:"03/10/2020", luogo:"ROMA", societa:"ATLETICA VIRTUS LUCCA", idx:343},
   {tipo:"Concorsi", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"F38", gara:"PESO", atleta:"ADDARIO Rocco", prest:"9,12", wind:"", data:"21/05/2000", luogo:"SIRACUSA", societa:"A.S. GELA SPORT", idx:344},
   {tipo:"Concorsi", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"F41", gara:"PESO", atleta:"POMPA Matteo", prest:"6,94", wind:"", data:"20/05/2018", luogo:"RIETI", societa:"ANTHROPOS MC", idx:345},
-  {tipo:"Concorsi", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"F42", gara:"PESO", atleta:"GOMIERO Denny", prest:"3,62", wind:"", data:"18/04/2026", luogo:"TREVISO", societa:"VENETO SPECIAL SPORT SSD", idx:346},
+  {tipo:"Concorsi", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"F42", gara:"PESO", atleta:"GOMIERO Denny", prest:"3,62", wind:"", data:"18/04/2026", luogo:"TREVISO", societa:"UOEI TREVISO", idx:346},
   {tipo:"Concorsi", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"F44", gara:"PESO", atleta:"MARRE' Federico", prest:"7,76", wind:"MP", data:"12/04/2026", luogo:"GENOVA", societa:"SS TRIONFO LIGURE", idx:347},
   {tipo:"Concorsi", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"F46", gara:"PESO", atleta:"JACOME NAVAS Marcelo Sebastian", prest:"11,41", wind:"", data:"12/09/2026", luogo:"GENOVA", societa:"ASD INTERFLUMINA CR", idx:348},
   {tipo:"Concorsi", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"F52", gara:"PESO", atleta:"GANESHAMOORTHY Rigivan", prest:"11,73", wind:"", data:"29/06/2024", luogo:"BRESCIA", societa:"ANTHROPOS MC", idx:349},
@@ -367,7 +367,7 @@ const RECORDS = [
   {tipo:"Concorsi", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"F37", gara:"DISCO", atleta:"GIOVARRUSCIO Simone", prest:"41,28", wind:"", data:"21/06/2018", luogo:"ROMA", societa:"ASD ATHLETIC TERNI", idx:365},
   {tipo:"Concorsi", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"F38", gara:"DISCO", atleta:"ADDARIO Rocco", prest:"28,35", wind:"", data:"23/05/1999", luogo:"RAGUSA", societa:"A.S. GELA SPORT", idx:366},
   {tipo:"Concorsi", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"F41", gara:"DISCO", atleta:"CAPROTTI Simone", prest:"21,66", wind:"", data:"13/06/2026", luogo:"GIUSSANO", societa:"FREEMOVING", idx:367},
-  {tipo:"Concorsi", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"F42", gara:"DISCO", atleta:"GOMIERO Denny", prest:"9,29", wind:"", data:"04/07/2026", luogo:"GROSSETO", societa:"UBEI TREVISO", idx:368},
+  {tipo:"Concorsi", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"F42", gara:"DISCO", atleta:"GOMIERO Denny", prest:"9,29", wind:"", data:"04/07/2026", luogo:"GROSSETO", societa:"UOEI TREVISO", idx:368},
   {tipo:"Concorsi", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"F46", gara:"DISCO", atleta:"JACOME NAVAS Marcelo Sebastian", prest:"40,77", wind:"", data:"12/09/2026", luogo:"GENOVA", societa:"ASD INTERFLUMINA CR", idx:369},
   {tipo:"Concorsi", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"F51", gara:"DISCO", atleta:"TERREVOLI Gaetano", prest:"10,08", wind:"", data:"30/05/2004", luogo:"ROMA", societa:"U.S. SANTO STEFANO", idx:370},
   {tipo:"Concorsi", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"F52", gara:"DISCO", atleta:"GANESHAMOORTHY Rigivan", prest:"28,83", wind:"", data:"12/10/2024", luogo:"ROMA", societa:"ANTHROPOS MC", idx:371},
@@ -388,7 +388,7 @@ const RECORDS = [
   {tipo:"Concorsi", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"F37", gara:"GIAVELLOTTO", atleta:"FIORE G.Carlo", prest:"31,90", wind:"", data:"23/05/1999", luogo:"RAGUSA", societa:"HANDY SPORT RAGUSA", idx:386},
   {tipo:"Concorsi", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"F38", gara:"GIAVELLOTTO", atleta:"ADDARIO Rocco", prest:"22,60", wind:"", data:"23/05/1999", luogo:"RAGUSA", societa:"A.S. GELA SPORT", idx:387},
   {tipo:"Concorsi", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"F41", gara:"GIAVELLOTTO", atleta:"CAPROTTI Simone", prest:"26,66", wind:"", data:"04/07/2026", luogo:"GROSSETO", societa:"FREEMOVING", idx:388},
-  {tipo:"Concorsi", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"F42", gara:"GIAVELLOTTO", atleta:"GOMIERO Denny", prest:"14,38", wind:"", data:"19/09/2026", luogo:"CASSOLA", societa:"VENETO SPECIAL SPORT SSD", idx:389},
+  {tipo:"Concorsi", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"F42", gara:"GIAVELLOTTO", atleta:"GOMIERO Denny", prest:"14,38", wind:"", data:"19/09/2026", luogo:"CASSOLA", societa:"UOEI TREVISO", idx:389},
   {tipo:"Concorsi", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"F44", gara:"GIAVELLOTTO", atleta:"MARRE' Federico", prest:"26,24", wind:"", data:"09/05/2026", luogo:"NOVARA", societa:"SS TRIONFO LIGURE", idx:390},
   {tipo:"Concorsi", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"F46", gara:"GIAVELLOTTO", atleta:"GOBBI Samuele", prest:"29,77", wind:"", data:"04/07/2026", luogo:"GROSSETO", societa:"UOEI TREVISO", idx:391},
   {tipo:"Concorsi", ambiente:"outdoor", sezione:"attivo", sex:"M", cat:"F52", gara:"GIAVELLOTTO", atleta:"GANESHAMOORTHY Rigivan", prest:"21,49", wind:"", data:"12/10/2024", luogo:"ROMA", societa:"ANTHROPOS MC", idx:392},
@@ -603,4 +603,4 @@ const RECORDS = [
   {tipo:"Concorsi", ambiente:"indoor", sezione:"attivo", sex:"M", cat:"F64", gara:"PESO Indoor", atleta:"LA BARBERA Roberto", prest:"11,94", wind:"", data:"05/04/2009", luogo:"ANCONA", societa:"SCANAVINO TEAM", idx:601},
 ];
 
-const UPDATED = {'CORSE':"21/09/2026",'CONCORSI':"21/09/2026",'CORSE_Indoor':"09/09/2026",'CONCORSI_Indoor':"09/09/2026"};
+const UPDATED = {'CORSE':"21/09/2026",'CONCORSI':"23/09/2026",'CORSE_Indoor':"09/09/2026",'CONCORSI_Indoor':"09/09/2026"};
